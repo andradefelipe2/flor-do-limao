@@ -3,10 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizzaria Flor do Limão - A Melhor da Região</title>
+
+    <!-- ============ SEO ============ -->
+    <title>Pizzaria Flor do Limão | Delivery de Pizza no Limão e Zona Norte SP</title>
+    <meta name="description" content="Pizzaria Flor do Limão: pizzas tradicionais, especiais, premium e doces. Delivery rápido na Zona Norte de SP (Limão, Vila Diva e região). Peça pelo WhatsApp ou iFood.">
+    <meta name="keywords" content="pizzaria Limão, delivery pizza Zona Norte SP, pizzaria Vila Diva, Flor do Limão, pizza delivery São Paulo">
+    <meta name="author" content="Pizzaria Flor do Limão">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1b3b22">
+    <link rel="canonical" href="https://pizzariaflordolimao.com.br/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="restaurant.restaurant">
+    <meta property="og:title" content="Pizzaria Flor do Limão | A Melhor da Região">
+    <meta property="og:description" content="Pizzas tradicionais, especiais, premium e doces. Delivery na Zona Norte de SP. Peça pelo WhatsApp!">
+    <meta property="og:image" content="https://pizzariaflordolimao.com.br/images/image-1.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://pizzariaflordolimao.com.br/">
+    <meta property="og:site_name" content="Pizzaria Flor do Limão">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pizzaria Flor do Limão | A Melhor da Região">
+    <meta name="twitter:description" content="Delivery de pizza na Zona Norte de SP. Peça pelo WhatsApp!">
+    <meta name="twitter:image" content="https://pizzariaflordolimao.com.br/images/image-1.png">
+
+    <!-- Schema.org Restaurant -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Pizzaria Flor do Limão",
+      "image": "https://pizzariaflordolimao.com.br/images/image-1.png",
+      "servesCuisine": "Pizza",
+      "priceRange": "R$ 40 - R$ 70",
+      "telephone": "+5511937295992",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua Carolina Soares, 876",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "addressCountry": "BR",
+        "addressNeighborhood": "Limão"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-23.4980",
+        "longitude": "-46.6600"
+      },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Sunday"], "opens": "18:30", "closes": "23:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "18:30", "closes": "23:30" }
+      ],
+      "url": "https://pizzariaflordolimao.com.br/",
+      "menu": "https://pizzariaflordolimao.com.br/#cardapio",
+      "acceptsReservations": "False"
+    }
+    </script>
+
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍕</text></svg>">
 
-    <!-- Evita "flash" de tema errado ao carregar -->
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Evita flash de tema errado -->
     <script>
         (function () {
             const saved = localStorage.getItem('theme');
@@ -17,9 +81,7 @@
         })();
     </script>
 
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         tailwind.config = {
@@ -45,8 +107,8 @@
     </script>
 
     <style>
-        /* ---------- Scroll ---------- */
         html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', system-ui, sans-serif; }
         section[id] { scroll-margin-top: 5.5rem; }
 
         ::-webkit-scrollbar { width: 10px; }
@@ -56,7 +118,6 @@
         }
         .dark ::-webkit-scrollbar-thumb { background: #29402f; background-clip: content-box; }
 
-        /* ---------- Abas do cardápio ---------- */
         .tab-btn {
             padding: .6rem 1.15rem;
             border-radius: 9999px;
@@ -68,37 +129,20 @@
             cursor: pointer;
             transition: all .25s cubic-bezier(.2, .7, .3, 1);
         }
-        .tab-btn:hover {
-            transform: translateY(-2px);
-            border-color: rgba(27, 59, 34, .45);
-            color: #1b3b22;
-        }
+        .tab-btn:hover { transform: translateY(-2px); border-color: rgba(27, 59, 34, .45); color: #1b3b22; }
         .tab-btn.active {
-            background: #1b3b22;
-            border-color: #1b3b22;
-            color: #ffffff;
+            background: #1b3b22; border-color: #1b3b22; color: #ffffff;
             box-shadow: 0 12px 22px -10px rgba(27, 59, 34, .75);
         }
-        .dark .tab-btn {
-            background: #132018;
-            color: #cbd5e1;
-            border-color: rgba(255, 255, 255, .08);
-        }
-        .dark .tab-btn:hover {
-            color: #f3a918;
-            border-color: rgba(243, 169, 24, .5);
-        }
+        .dark .tab-btn { background: #132018; color: #cbd5e1; border-color: rgba(255, 255, 255, .08); }
+        .dark .tab-btn:hover { color: #f3a918; border-color: rgba(243, 169, 24, .5); }
         .dark .tab-btn.active {
-            background: #f3a918;
-            border-color: #f3a918;
-            color: #122616;
+            background: #f3a918; border-color: #f3a918; color: #122616;
             box-shadow: 0 12px 24px -10px rgba(243, 169, 24, .55);
         }
 
-        /* ---------- Animações ---------- */
         [data-reveal] {
-            opacity: 0;
-            transform: translateY(26px);
+            opacity: 0; transform: translateY(26px);
             transition: opacity .7s cubic-bezier(.2, .7, .3, 1), transform .7s cubic-bezier(.2, .7, .3, 1);
         }
         [data-reveal].is-visible { opacity: 1; transform: none; }
@@ -120,58 +164,42 @@
             .pizza-card, .float-slow { animation: none !important; }
         }
 
-        /* ---------- Mapa ---------- */
-        .map-frame {
-            filter: saturate(1.05) contrast(1.02);
-        }
-        .dark .map-frame {
-            filter: invert(0.92) hue-rotate(180deg) saturate(0.85) brightness(0.95);
-        }
+        .map-frame { filter: saturate(1.05) contrast(1.02); }
+        .dark .map-frame { filter: invert(0.92) hue-rotate(180deg) saturate(0.85) brightness(0.95); }
 
-        /* ---------- Status Aberto/Fechado ---------- */
         .status-open { color: #16a34a; }
         .status-closed { color: #dc2626; }
         .dot-open { background-color: #22c55e; }
         .dot-closed { background-color: #ef4444; }
 
-        /* Header status pill */
         .header-status {
-            display: inline-flex;
-            align-items: center;
-            gap: .55rem;
-            padding: .5rem .95rem;
-            border-radius: 9999px;
-            font-size: .75rem;
-            font-weight: 700;
-            border: 1px solid transparent;
-            transition: all .3s ease;
+            display: inline-flex; align-items: center; gap: .55rem;
+            padding: .5rem .95rem; border-radius: 9999px;
+            font-size: .75rem; font-weight: 700;
+            border: 1px solid transparent; transition: all .3s ease;
         }
-        .header-status.is-open {
-            background: rgba(34, 197, 94, .12);
-            border-color: rgba(34, 197, 94, .3);
-            color: #16a34a;
+        .header-status.is-open { background: rgba(34, 197, 94, .12); border-color: rgba(34, 197, 94, .3); color: #16a34a; }
+        .header-status.is-closed { background: rgba(239, 68, 68, .1); border-color: rgba(239, 68, 68, .3); color: #dc2626; }
+        .dark .header-status.is-open { background: rgba(34, 197, 94, .15); border-color: rgba(34, 197, 94, .35); color: #4ade80; }
+        .dark .header-status.is-closed { background: rgba(239, 68, 68, .15); border-color: rgba(239, 68, 68, .35); color: #f87171; }
+
+        /* Galeria */
+        .gallery-item img {
+            transition: transform .6s cubic-bezier(.2, .7, .3, 1);
         }
-        .header-status.is-closed {
-            background: rgba(239, 68, 68, .1);
-            border-color: rgba(239, 68, 68, .3);
-            color: #dc2626;
-        }
-        .dark .header-status.is-open {
-            background: rgba(34, 197, 94, .15);
-            border-color: rgba(34, 197, 94, .35);
-            color: #4ade80;
-        }
-        .dark .header-status.is-closed {
-            background: rgba(239, 68, 68, .15);
-            border-color: rgba(239, 68, 68, .35);
-            color: #f87171;
+        .gallery-item:hover img { transform: scale(1.08); }
+
+        /* Feedback do botão copiar PIX */
+        .pix-copy-btn.copied {
+            background: rgba(34, 197, 94, .2);
+            color: #22c55e;
         }
     </style>
 </head>
 
 <body class="bg-brand-lightBg dark:bg-brand-night text-gray-800 dark:text-gray-200 antialiased transition-colors duration-300 selection:bg-brand-yellow/30">
 
-    <!-- SVG sprite reutilizável (flor de pizzas) -->
+    <!-- SVG sprite (flor de pizzas) -->
     <svg width="0" height="0" class="absolute" aria-hidden="true">
         <defs>
             <g id="pfl-petal">
@@ -199,7 +227,6 @@
     <header class="sticky top-0 z-50 border-b border-black/5 dark:border-white/5 bg-brand-lightBg/80 dark:bg-brand-night/80 backdrop-blur-xl transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-4 h-[68px] flex items-center justify-between gap-4">
 
-            <!-- Logo -->
             <a href="#" class="group flex items-center gap-3 shrink-0">
                 <span class="grid place-items-center w-11 h-11 rounded-2xl bg-gradient-to-br from-brand-green to-brand-darkGreen shadow-lg shadow-brand-green/25 ring-1 ring-white/10">
                     <svg viewBox="0 0 64 64" class="w-7 h-7 transition-transform duration-500 group-hover:rotate-[22deg]" aria-hidden="true">
@@ -212,22 +239,22 @@
                 </span>
             </a>
 
-            <!-- Status de funcionamento (substituiu os atalhos de navegação) -->
             <div id="header-status" class="header-status is-closed hidden sm:inline-flex" aria-live="polite">
                 <span id="header-status-dot" class="w-2 h-2 rounded-full dot-closed"></span>
                 <i id="header-status-icon" data-lucide="clock" class="w-3.5 h-3.5"></i>
                 <span id="header-status-text">Verificando...</span>
             </div>
 
-            <!-- Ações -->
             <div class="flex items-center gap-2 sm:gap-3">
-                <button id="theme-toggle" type="button" aria-label="Alternar entre modo claro e escuro"
+                <button id="theme-toggle" type="button"
+                        aria-label="Alternar entre modo claro e escuro"
+                        aria-pressed="false"
                         class="grid place-items-center w-10 h-10 rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-white/5 text-brand-green dark:text-brand-yellow hover:scale-105 hover:border-brand-yellow transition cursor-pointer">
                     <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
                     <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
                 </button>
 
-                <a href="https://wa.me/5511937295992" target="_blank" rel="noopener"
+                <a href="https://wa.me/5511937295992?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener"
                    class="inline-flex items-center gap-2 rounded-full bg-brand-yellow px-4 py-2.5 text-sm font-bold text-brand-darkGreen shadow-lg shadow-brand-yellow/25 hover:bg-amber-400 hover:shadow-brand-yellow/40 hover:-translate-y-0.5 transition">
                     <i data-lucide="phone" class="w-4 h-4"></i>
                     <span class="hidden sm:inline">Pedir Agora</span>
@@ -241,7 +268,15 @@
     <section class="max-w-6xl mx-auto px-4 pt-6 md:pt-8">
         <div class="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-green via-brand-darkGreen to-[#08170d] px-6 py-14 md:px-14 md:py-20 text-white shadow-2xl shadow-brand-green/20">
 
-            <!-- Enfeites de fundo (SVG) -->
+            <!-- Imagem de fundo do hero -->
+            <!-- Basta subir mais imagens na pasta /images/ e ajustar o src abaixo -->
+            <img src="images/image-1.png" alt=""
+                 class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-30 mix-blend-luminosity"
+                 onerror="this.style.display='none'">
+
+            <!-- Overlay para manter legibilidade -->
+            <div class="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-green/85 via-brand-darkGreen/90 to-[#08170d]/95"></div>
+
             <div class="pointer-events-none absolute -top-24 -right-16 h-72 w-72 rounded-full bg-brand-yellow/20 blur-3xl"></div>
             <div class="pointer-events-none absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-emerald-500/10 blur-3xl"></div>
 
@@ -269,7 +304,7 @@
                 </p>
 
                 <div class="mt-9 flex flex-wrap justify-center gap-3">
-                    <a href="https://wa.me/5511937295992" target="_blank" rel="noopener"
+                    <a href="https://wa.me/5511937295992?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido%20de%20pizza." target="_blank" rel="noopener"
                        class="inline-flex items-center gap-2 rounded-2xl bg-green-500 px-6 py-3.5 font-bold text-white shadow-xl shadow-green-500/25 hover:bg-green-600 hover:-translate-y-0.5 transition">
                         <i data-lucide="message-square" class="w-5 h-5"></i>
                         <span>Pedir pelo WhatsApp</span>
@@ -304,8 +339,34 @@
         </div>
     </section>
 
+    <!-- ================= GALERIA ================= -->
+    <!--
+      COMO USAR:
+      Suba as imagens na pasta /images/ do repositório.
+      O nome deve seguir o padrão: image-1.png, image-2.png, image-3.png...
+      Imagens que não existirem serão escondidas automaticamente.
+      Basta adicionar ou remover <figure> para cada imagem nova.
+    -->
+    <section class="max-w-6xl mx-auto px-4 pt-14 md:pt-16">
+        <div data-reveal class="mb-8 text-center">
+            <span class="text-xs font-bold uppercase tracking-[0.25em] text-brand-yellow">Nossas pizzas</span>
+            <h2 class="mt-3 text-2xl md:text-3xl font-extrabold tracking-tight text-brand-green dark:text-white">Feitas com carinho, servidas com orgulho</h2>
+        </div>
+
+        <div data-reveal class="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
+            <figure class="gallery-item group relative aspect-square overflow-hidden rounded-2xl bg-gray-200 dark:bg-brand-nightSoft ring-1 ring-black/5 dark:ring-white/5">
+                <img src="images/image-1.png" alt="Pizza da Pizzaria Flor do Limão" loading="lazy" class="h-full w-full object-cover" onerror="this.closest('figure').style.display='none'">
+            </figure>
+            <figure class="gallery-item group relative aspect-square overflow-hidden rounded-2xl bg-gray-200 dark:bg-brand-nightSoft ring-1 ring-black/5 dark:ring-white/5">
+                <img src="images/image-2.png" alt="Pizza artesanal Flor do Limão" loading="lazy" class="h-full w-full object-cover" onerror="this.closest('figure').style.display='none'">
+            </figure>
+            <!-- Para adicionar mais fotos, copie o bloco <figure> acima e troque o número:
+                 images/image-3.png, images/image-4.png, etc. -->
+        </div>
+    </section>
+
     <!-- ================= PROMOÇÃO ================= -->
-    <section id="promocao" class="max-w-6xl mx-auto px-4 pt-10 md:pt-14">
+    <section id="promocao" class="max-w-6xl mx-auto px-4 pt-14 md:pt-16">
         <div data-reveal class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-brand-yellow to-amber-400 p-6 md:p-8 shadow-xl shadow-amber-500/20">
             <div class="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/25 blur-2xl"></div>
 
@@ -321,7 +382,7 @@
                     </div>
                 </div>
 
-                <a href="https://wa.me/5511937295992?text=Olá!%20Quero%20aproveitar%20a%20promoção%20da%20Dolly!" target="_blank" rel="noopener"
+                <a href="https://wa.me/5511937295992?text=Ol%C3%A1!%20Quero%20aproveitar%20a%20promo%C3%A7%C3%A3o%20da%20Dolly!" target="_blank" rel="noopener"
                    class="inline-flex shrink-0 items-center gap-2 rounded-xl bg-brand-darkGreen px-5 py-3 text-sm font-bold text-white shadow-lg hover:bg-black/80 hover:-translate-y-0.5 transition">
                     <span>Aproveitar Oferta</span>
                     <i data-lucide="arrow-right" class="w-4 h-4"></i>
@@ -338,18 +399,10 @@
             <p class="mt-3 text-gray-500 dark:text-gray-400">Todas as pizzas disponíveis em tamanho grande e broto.</p>
 
             <div class="mt-7 flex flex-wrap justify-center gap-2.5" role="tablist" aria-label="Categorias do cardápio">
-                <button type="button" role="tab" aria-selected="true" onclick="filterCategory('tradicional')" id="btn-tradicional" class="tab-btn active">
-                    Tradicionais · R$ 49,99
-                </button>
-                <button type="button" role="tab" aria-selected="false" onclick="filterCategory('especial')" id="btn-especial" class="tab-btn">
-                    Especiais · R$ 54,99
-                </button>
-                <button type="button" role="tab" aria-selected="false" onclick="filterCategory('premium')" id="btn-premium" class="tab-btn">
-                    Premium · R$ 64,99
-                </button>
-                <button type="button" role="tab" aria-selected="false" onclick="filterCategory('doce')" id="btn-doce" class="tab-btn">
-                    Pizzas Doces
-                </button>
+                <button type="button" role="tab" aria-selected="true" onclick="filterCategory('tradicional')" id="btn-tradicional" class="tab-btn active">Tradicionais · R$ 49,99</button>
+                <button type="button" role="tab" aria-selected="false" onclick="filterCategory('especial')" id="btn-especial" class="tab-btn">Especiais · R$ 54,99</button>
+                <button type="button" role="tab" aria-selected="false" onclick="filterCategory('premium')" id="btn-premium" class="tab-btn">Premium · R$ 64,99</button>
+                <button type="button" role="tab" aria-selected="false" onclick="filterCategory('doce')" id="btn-doce" class="tab-btn">Pizzas Doces</button>
             </div>
         </div>
 
@@ -359,14 +412,12 @@
     <!-- ================= BORDAS E BEBIDAS ================= -->
     <section id="adicionais" class="border-y border-black/5 dark:border-white/5 bg-black/[0.02] dark:bg-white/[0.02] py-16 md:py-20">
         <div class="max-w-5xl mx-auto px-4">
-
             <div data-reveal class="mb-10 text-center">
                 <span class="text-xs font-bold uppercase tracking-[0.25em] text-brand-yellow">Complementos</span>
                 <h2 class="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight text-brand-green dark:text-white">Bordas &amp; Bebidas</h2>
             </div>
 
             <div class="grid gap-6 md:grid-cols-2">
-
                 <div data-reveal class="rounded-3xl border border-black/5 dark:border-white/5 bg-white dark:bg-brand-nightSoft p-6 md:p-8 shadow-sm">
                     <div class="mb-6 flex items-center gap-3">
                         <span class="grid h-11 w-11 place-items-center rounded-2xl bg-brand-yellow/15 text-brand-yellow">
@@ -375,22 +426,10 @@
                         <h3 class="text-xl font-bold text-brand-green dark:text-white">Bordas Recheadas</h3>
                     </div>
                     <ul class="text-sm">
-                        <li class="flex items-center justify-between border-b border-dashed border-gray-200 dark:border-white/10 py-3">
-                            <span class="text-gray-600 dark:text-gray-300">Catupiry</span>
-                            <strong class="text-brand-green dark:text-brand-yellow">+ R$ 18,00</strong>
-                        </li>
-                        <li class="flex items-center justify-between border-b border-dashed border-gray-200 dark:border-white/10 py-3">
-                            <span class="text-gray-600 dark:text-gray-300">Cheddar</span>
-                            <strong class="text-brand-green dark:text-brand-yellow">+ R$ 15,00</strong>
-                        </li>
-                        <li class="flex items-center justify-between border-b border-dashed border-gray-200 dark:border-white/10 py-3">
-                            <span class="text-gray-600 dark:text-gray-300">Requeijão Cremoso</span>
-                            <strong class="text-brand-green dark:text-brand-yellow">+ R$ 15,00</strong>
-                        </li>
-                        <li class="flex items-center justify-between py-3">
-                            <span class="text-gray-600 dark:text-gray-300">Chocolate</span>
-                            <strong class="text-brand-green dark:text-brand-yellow">+ R$ 20,00</strong>
-                        </li>
+                        <li class="flex items-center justify-between border-b border-dashed border-gray-200 dark:border-white/10 py-3"><span class="text-gray-600 dark:text-gray-300">Catupiry</span><strong class="text-brand-green dark:text-brand-yellow">+ R$ 18,00</strong></li>
+                        <li class="flex items-center justify-between border-b border-dashed border-gray-200 dark:border-white/10 py-3"><span class="text-gray-600 dark:text-gray-300">Cheddar</span><strong class="text-brand-green dark:text-brand-yellow">+ R$ 15,00</strong></li>
+                        <li class="flex items-center justify-between border-b border-dashed border-gray-200 dark:border-white/10 py-3"><span class="text-gray-600 dark:text-gray-300">Requeijão Cremoso</span><strong class="text-brand-green dark:text-brand-yellow">+ R$ 15,00</strong></li>
+                        <li class="flex items-center justify-between py-3"><span class="text-gray-600 dark:text-gray-300">Chocolate</span><strong class="text-brand-green dark:text-brand-yellow">+ R$ 20,00</strong></li>
                     </ul>
                 </div>
 
@@ -402,33 +441,14 @@
                         <h3 class="text-xl font-bold text-brand-green dark:text-white">Bebidas</h3>
                     </div>
                     <ul class="text-sm">
-                        <li class="flex items-center justify-between border-b border-dashed border-gray-200 dark:border-white/10 py-3">
-                            <span class="text-gray-600 dark:text-gray-300">Coca-Cola / Zero 2L</span>
-                            <strong class="text-brand-green dark:text-brand-yellow">R$ 18,00</strong>
-                        </li>
-                        <li class="flex items-center justify-between border-b border-dashed border-gray-200 dark:border-white/10 py-3">
-                            <span class="text-gray-600 dark:text-gray-300">Guaraná Antarctica / Fanta 2L</span>
-                            <strong class="text-brand-green dark:text-brand-yellow">R$ 15,00</strong>
-                        </li>
-                        <li class="flex items-center justify-between border-b border-dashed border-gray-200 dark:border-white/10 py-3">
-                            <span class="text-gray-600 dark:text-gray-300">Dolly Guaraná 2L</span>
-                            <strong class="text-brand-green dark:text-brand-yellow">R$ 10,00</strong>
-                        </li>
-                        <li class="flex items-center justify-between border-b border-dashed border-gray-200 dark:border-white/10 py-3">
-                            <span class="text-gray-600 dark:text-gray-300">Refrigerante Lata 350ml</span>
-                            <strong class="text-brand-green dark:text-brand-yellow">R$ 7,00</strong>
-                        </li>
-                        <li class="flex items-center justify-between border-b border-dashed border-gray-200 dark:border-white/10 py-3">
-                            <span class="text-gray-600 dark:text-gray-300">Cerveja Heineken 350ml</span>
-                            <strong class="text-brand-green dark:text-brand-yellow">R$ 8,00</strong>
-                        </li>
-                        <li class="flex items-center justify-between py-3">
-                            <span class="text-gray-600 dark:text-gray-300">Água Mineral 500ml</span>
-                            <strong class="text-brand-green dark:text-brand-yellow">R$ 3,00</strong>
-                        </li>
+                        <li class="flex items-center justify-between border-b border-dashed border-gray-200 dark:border-white/10 py-3"><span class="text-gray-600 dark:text-gray-300">Coca-Cola / Zero 2L</span><strong class="text-brand-green dark:text-brand-yellow">R$ 18,00</strong></li>
+                        <li class="flex items-center justify-between border-b border-dashed border-gray-200 dark:border-white/10 py-3"><span class="text-gray-600 dark:text-gray-300">Guaraná Antarctica / Fanta 2L</span><strong class="text-brand-green dark:text-brand-yellow">R$ 15,00</strong></li>
+                        <li class="flex items-center justify-between border-b border-dashed border-gray-200 dark:border-white/10 py-3"><span class="text-gray-600 dark:text-gray-300">Dolly Guaraná 2L</span><strong class="text-brand-green dark:text-brand-yellow">R$ 10,00</strong></li>
+                        <li class="flex items-center justify-between border-b border-dashed border-gray-200 dark:border-white/10 py-3"><span class="text-gray-600 dark:text-gray-300">Refrigerante Lata 350ml</span><strong class="text-brand-green dark:text-brand-yellow">R$ 7,00</strong></li>
+                        <li class="flex items-center justify-between border-b border-dashed border-gray-200 dark:border-white/10 py-3"><span class="text-gray-600 dark:text-gray-300">Cerveja Heineken 350ml</span><strong class="text-brand-green dark:text-brand-yellow">R$ 8,00</strong></li>
+                        <li class="flex items-center justify-between py-3"><span class="text-gray-600 dark:text-gray-300">Água Mineral 500ml</span><strong class="text-brand-green dark:text-brand-yellow">R$ 3,00</strong></li>
                     </ul>
                 </div>
-
             </div>
         </div>
     </section>
@@ -442,19 +462,14 @@
         </div>
 
         <div data-reveal class="overflow-hidden rounded-3xl border border-black/5 dark:border-white/10 bg-white dark:bg-brand-nightSoft shadow-xl shadow-black/5">
-
             <div class="relative h-[340px] sm:h-[420px] md:h-[480px] w-full bg-gray-200 dark:bg-brand-night">
-                <iframe
-                    title="Mapa da Pizzaria Flor do Limão"
+                <iframe title="Mapa da Pizzaria Flor do Limão"
                     src="https://www.google.com/maps?q=Rua+Carolina+Soares,+876+-+Limão,+São+Paulo+-+SP&hl=pt-BR&z=16&output=embed"
-                    class="map-frame absolute inset-0 h-full w-full border-0"
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                    allowfullscreen></iframe>
+                    class="map-frame absolute inset-0 h-full w-full border-0" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
             </div>
 
             <div class="flex flex-col gap-5 border-t border-black/5 dark:border-white/10 p-6 md:flex-row md:items-center md:justify-between md:p-8">
-
                 <div class="flex items-start gap-4">
                     <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-brand-yellow/15 text-brand-yellow">
                         <i data-lucide="map-pin" class="w-6 h-6"></i>
@@ -468,9 +483,9 @@
                                 <span class="map-status-text font-bold text-red-400">Verificando...</span>
                             </span>
                             <span class="hidden sm:inline">|</span>
-                            <span>Terça a Quinta e Domingo: 18:30 às 23:00</span>
+                            <span>Ter a Qui e Dom: 18:30 às 23:00</span>
                             <span class="hidden sm:inline">|</span>
-                            <span>Sexta e Sábado: 18:30 às 23:30</span>
+                            <span>Sex e Sáb: 18:30 às 23:30</span>
                             <span class="hidden sm:inline">|</span>
                             <span>Segunda: Não abre</span>
                         </div>
@@ -491,79 +506,44 @@
                         <span>Abrir no Maps</span>
                     </a>
                 </div>
-
             </div>
         </div>
     </section>
 
     <!-- ================= CONTATO ================= -->
     <section id="contato" class="max-w-6xl mx-auto px-4 pb-16 md:pb-20">
-
         <div data-reveal class="mb-10 text-center">
             <span class="text-xs font-bold uppercase tracking-[0.25em] text-brand-yellow">Fale com a gente</span>
             <h2 class="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight text-brand-green dark:text-white">Contato &amp; Pedidos</h2>
         </div>
 
         <div class="grid gap-6 md:grid-cols-3">
-
-            <!-- Telefones -->
             <div data-reveal class="rounded-3xl bg-brand-green dark:bg-brand-nightSoft p-7 text-white shadow-lg ring-1 ring-white/5 hover:-translate-y-1 transition">
                 <span class="grid h-12 w-12 place-items-center rounded-2xl bg-white/10 text-brand-yellow">
                     <i data-lucide="phone-call" class="w-6 h-6"></i>
                 </span>
                 <h4 class="mt-5 text-lg font-bold">Telefones &amp; Pedidos</h4>
-                <p class="mt-3 flex items-center gap-2 text-sm text-gray-300">
-                    <i data-lucide="phone" class="w-4 h-4 text-brand-yellow"></i>
-                    <span>(11) 3856-0864</span>
-                </p>
-                <p class="mt-2 flex items-center gap-2 text-sm text-gray-300">
-                    <i data-lucide="phone" class="w-4 h-4 text-brand-yellow"></i>
-                    <span>(11) 3857-9361</span>
-                </p>
-                <p class="mt-3 flex items-center gap-2 text-sm font-bold text-brand-yellow">
-                    <i data-lucide="smartphone" class="w-4 h-4"></i>
-                    <span>WhatsApp: (11) 93729-5992</span>
-                </p>
+                <p class="mt-3 flex items-center gap-2 text-sm text-gray-300"><i data-lucide="phone" class="w-4 h-4 text-brand-yellow"></i><span>(11) 3856-0864</span></p>
+                <p class="mt-2 flex items-center gap-2 text-sm text-gray-300"><i data-lucide="phone" class="w-4 h-4 text-brand-yellow"></i><span>(11) 3857-9361</span></p>
+                <p class="mt-3 flex items-center gap-2 text-sm font-bold text-brand-yellow"><i data-lucide="smartphone" class="w-4 h-4"></i><span>WhatsApp: (11) 93729-5992</span></p>
             </div>
 
-            <!-- Endereço e Horário -->
             <div data-reveal class="rounded-3xl bg-brand-green dark:bg-brand-nightSoft p-7 text-white shadow-lg ring-1 ring-white/5 hover:-translate-y-1 transition">
                 <span class="grid h-12 w-12 place-items-center rounded-2xl bg-white/10 text-brand-yellow">
                     <i data-lucide="map-pin" class="w-6 h-6"></i>
                 </span>
                 <h4 class="mt-5 text-lg font-bold">Localização &amp; Horário</h4>
                 <p class="mt-3 text-sm text-gray-300">Rua Carolina Soares, Nº 876, Bairro do Limão</p>
-                
+
                 <div class="mt-4 border-t border-white/10 pt-4 space-y-1.5">
                     <p class="text-xs font-semibold uppercase tracking-wider text-brand-yellow mb-2">Funcionamento</p>
-                    <div class="flex justify-between text-xs text-gray-300">
-                        <span>Segunda-feira</span>
-                        <span>Não abre</span>
-                    </div>
-                    <div class="flex justify-between text-xs text-gray-300">
-                        <span>Terça-feira</span>
-                        <span>18:30 às 23:00</span>
-                    </div>
-                    <div class="flex justify-between text-xs text-gray-300">
-                        <span>Quarta-feira</span>
-                        <span>18:30 às 23:00</span>
-                    </div>
-                    <div class="flex justify-between text-xs text-gray-300">
-                        <span>Quinta-feira</span>
-                        <span>18:30 às 23:00</span>
-                    </div>
-                    <div class="flex justify-between text-xs text-gray-300">
-                        <span>Sexta-feira</span>
-                        <span>18:30 às 23:30</span>
-                    </div>
-                    <div class="flex justify-between text-xs text-gray-300">
-                        <span>Sábado</span>
-                        <span>18:30 às 23:30</span>
-                    </div>
-                    <div class="flex justify-between text-xs text-gray-300">
-                        <span>Domingo</span>
-                        <span>18:30 às 23:00</span>
-                    </div>
+                    <div class="flex justify-between text-xs text-gray-300"><span>Segunda-feira</span><span>Não abre</span></div>
+                    <div class="flex justify-between text-xs text-gray-300"><span>Terça-feira</span><span>18:30 às 23:00</span></div>
+                    <div class="flex justify-between text-xs text-gray-300"><span>Quarta-feira</span><span>18:30 às 23:00</span></div>
+                    <div class="flex justify-between text-xs text-gray-300"><span>Quinta-feira</span><span>18:30 às 23:00</span></div>
+                    <div class="flex justify-between text-xs text-gray-300"><span>Sexta-feira</span><span>18:30 às 23:30</span></div>
+                    <div class="flex justify-between text-xs text-gray-300"><span>Sábado</span><span>18:30 às 23:30</span></div>
+                    <div class="flex justify-between text-xs text-gray-300"><span>Domingo</span><span>18:30 às 23:00</span></div>
                 </div>
 
                 <div class="mt-3 flex items-center gap-2">
@@ -572,20 +552,23 @@
                 </div>
             </div>
 
-            <!-- PIX -->
+            <!-- PIX com botão de copiar funcional -->
             <div data-reveal class="rounded-3xl bg-brand-green dark:bg-brand-nightSoft p-7 text-white shadow-lg ring-1 ring-white/5 hover:-translate-y-1 transition">
                 <span class="grid h-12 w-12 place-items-center rounded-2xl bg-white/10 text-brand-yellow">
                     <i data-lucide="qr-code" class="w-6 h-6"></i>
                 </span>
                 <h4 class="mt-5 text-lg font-bold">Pagamento via PIX</h4>
                 <p class="mt-3 text-xs text-gray-400">Chave CNPJ:</p>
-                <div class="mt-2 flex items-center justify-between rounded-2xl border border-white/10 bg-black/20 px-4 py-3">
-                    <span class="font-mono text-sm text-brand-yellow">30.412.215/0001-80</span>
-                    <i data-lucide="copy" class="w-4 h-4 text-gray-400"></i>
+                <div class="mt-2 flex items-center justify-between gap-2 rounded-2xl border border-white/10 bg-black/20 pl-4 pr-2 py-2">
+                    <span id="pix-key" class="font-mono text-sm text-brand-yellow select-all">30.412.215/0001-80</span>
+                    <button type="button" id="pix-copy-btn" aria-label="Copiar chave PIX"
+                            class="pix-copy-btn shrink-0 grid place-items-center w-9 h-9 rounded-xl text-gray-300 hover:text-brand-yellow hover:bg-white/5 transition cursor-pointer">
+                        <i data-lucide="copy" class="w-4 h-4 pix-icon-copy"></i>
+                        <i data-lucide="check" class="w-4 h-4 pix-icon-check hidden"></i>
+                    </button>
                 </div>
                 <span class="mt-3 block text-xs text-gray-400">Famiglia Mancioppi</span>
             </div>
-
         </div>
     </section>
 
@@ -594,9 +577,7 @@
         <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:text-left">
             <div class="flex items-center gap-3">
                 <span class="grid place-items-center w-9 h-9 rounded-xl bg-white/10">
-                    <svg viewBox="0 0 64 64" class="w-5 h-5" aria-hidden="true">
-                        <use href="#pfl-flower"/>
-                    </svg>
+                    <svg viewBox="0 0 64 64" class="w-5 h-5" aria-hidden="true"><use href="#pfl-flower"/></svg>
                 </span>
                 <span class="text-sm font-bold text-brand-yellow">Flor do Limão</span>
             </div>
@@ -604,27 +585,65 @@
         </div>
     </footer>
 
-    <!-- Botão flutuante WhatsApp (mobile) -->
-    <a href="https://wa.me/5511937295992" target="_blank" rel="noopener" aria-label="Pedir pelo WhatsApp"
+    <a href="https://wa.me/5511937295992?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener" aria-label="Pedir pelo WhatsApp"
        class="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-green-500 text-white shadow-2xl shadow-green-500/40 hover:scale-110 transition md:hidden">
         <i data-lucide="message-circle" class="w-7 h-7"></i>
     </a>
 
     <!-- ================= SCRIPTS ================= -->
     <script>
-        /* ---------- Ícones ---------- */
         lucide.createIcons();
 
-        /* ---------- Tema claro / escuro ---------- */
+        /* ---------- Tema ---------- */
         const root = document.documentElement;
         const themeToggle = document.getElementById('theme-toggle');
 
+        themeToggle.setAttribute('aria-pressed', root.classList.contains('dark') ? 'true' : 'false');
+
         themeToggle.addEventListener('click', () => {
             root.classList.toggle('dark');
-            localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+            const isDark = root.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
         });
 
-        /* ---------- Animação de entrada ---------- */
+        /* ---------- Copiar PIX ---------- */
+        const pixBtn = document.getElementById('pix-copy-btn');
+        const pixKey = document.getElementById('pix-key');
+
+        if (pixBtn && pixKey) {
+            pixBtn.addEventListener('click', async () => {
+                const key = pixKey.textContent.trim();
+                try {
+                    if (navigator.clipboard && window.isSecureContext) {
+                        await navigator.clipboard.writeText(key);
+                    } else {
+                        const ta = document.createElement('textarea');
+                        ta.value = key;
+                        ta.style.position = 'fixed';
+                        ta.style.opacity = '0';
+                        document.body.appendChild(ta);
+                        ta.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(ta);
+                    }
+
+                    pixBtn.classList.add('copied');
+                    pixBtn.querySelector('.pix-icon-copy').classList.add('hidden');
+                    pixBtn.querySelector('.pix-icon-check').classList.remove('hidden');
+
+                    setTimeout(() => {
+                        pixBtn.classList.remove('copied');
+                        pixBtn.querySelector('.pix-icon-copy').classList.remove('hidden');
+                        pixBtn.querySelector('.pix-icon-check').classList.add('hidden');
+                    }, 2000);
+                } catch (err) {
+                    console.error('Erro ao copiar PIX:', err);
+                }
+            });
+        }
+
+        /* ---------- Reveal on scroll ---------- */
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
@@ -636,38 +655,31 @@
 
         document.querySelectorAll('[data-reveal]').forEach((el) => observer.observe(el));
 
-        /* ---------- Status Aberto/Fechado (Horário de Brasília) ---------- */
+        /* ---------- Status Aberto/Fechado ---------- */
         function updateOpenStatus() {
-            // Hora atual em Brasília (UTC-3)
             const now = new Date();
             const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
             const brasiliaTime = new Date(utc + (3600000 * -3));
 
-            const day = brasiliaTime.getDay(); // 0 = Domingo, 1 = Segunda...
+            const day = brasiliaTime.getDay();
             const currentTimeInMinutes = brasiliaTime.getHours() * 60 + brasiliaTime.getMinutes();
 
-            // Horários em minutos desde a meia-noite
-            // 0=Dom, 1=Seg, 2=Ter, 3=Qua, 4=Qui, 5=Sex, 6=Sáb
             const schedule = {
-                0: { open: 18 * 60 + 30, close: 23 * 60 },       // Domingo: 18:30 - 23:00
-                1: null,                                         // Segunda: Fechado
-                2: { open: 18 * 60 + 30, close: 23 * 60 },       // Terça: 18:30 - 23:00
-                3: { open: 18 * 60 + 30, close: 23 * 60 },       // Quarta: 18:30 - 23:00
-                4: { open: 18 * 60 + 30, close: 23 * 60 },       // Quinta: 18:30 - 23:00
-                5: { open: 18 * 60 + 30, close: 23 * 60 + 30 },  // Sexta: 18:30 - 23:30
-                6: { open: 18 * 60 + 30, close: 23 * 60 + 30 }   // Sábado: 18:30 - 23:30
+                0: { open: 18 * 60 + 30, close: 23 * 60 },
+                1: null,
+                2: { open: 18 * 60 + 30, close: 23 * 60 },
+                3: { open: 18 * 60 + 30, close: 23 * 60 },
+                4: { open: 18 * 60 + 30, close: 23 * 60 },
+                5: { open: 18 * 60 + 30, close: 23 * 60 + 30 },
+                6: { open: 18 * 60 + 30, close: 23 * 60 + 30 }
             };
 
             let isOpen = false;
             const todaySchedule = schedule[day];
-
-            if (todaySchedule) {
-                if (currentTimeInMinutes >= todaySchedule.open && currentTimeInMinutes < todaySchedule.close) {
-                    isOpen = true;
-                }
+            if (todaySchedule && currentTimeInMinutes >= todaySchedule.open && currentTimeInMinutes < todaySchedule.close) {
+                isOpen = true;
             }
 
-            /* ---- Header status ---- */
             const headerStatus = document.getElementById('header-status');
             const headerDot = document.getElementById('header-status-dot');
             const headerText = document.getElementById('header-status-text');
@@ -676,19 +688,11 @@
             if (headerStatus && headerDot && headerText) {
                 headerStatus.classList.toggle('is-open', isOpen);
                 headerStatus.classList.toggle('is-closed', !isOpen);
-
-                headerDot.className = isOpen
-                    ? 'w-2 h-2 rounded-full dot-open animate-pulse'
-                    : 'w-2 h-2 rounded-full dot-closed';
-
-                if (headerIcon) {
-                    headerIcon.setAttribute('data-lucide', isOpen ? 'door-open' : 'door-closed');
-                }
-
+                headerDot.className = isOpen ? 'w-2 h-2 rounded-full dot-open animate-pulse' : 'w-2 h-2 rounded-full dot-closed';
+                if (headerIcon) headerIcon.setAttribute('data-lucide', isOpen ? 'door-open' : 'door-closed');
                 headerText.textContent = isOpen ? 'Aberto agora' : 'Fechado agora';
             }
 
-            /* ---- Hero status ---- */
             const heroDot = document.getElementById('hero-status-dot');
             const heroText = document.getElementById('hero-status-text');
             if (heroDot && heroText) {
@@ -697,7 +701,6 @@
                 heroText.className = isOpen ? 'text-xs font-medium status-open' : 'text-xs font-medium status-closed';
             }
 
-            /* ---- Mapa status ---- */
             const mapDot = document.querySelector('.map-status-dot');
             const mapText = document.querySelector('.map-status-text');
             if (mapDot && mapText) {
@@ -706,7 +709,6 @@
                 mapText.className = isOpen ? 'map-status-text font-bold status-open' : 'map-status-text font-bold status-closed';
             }
 
-            /* ---- Contato status ---- */
             const contactDot = document.querySelector('.contact-status-dot');
             const contactText = document.querySelector('.contact-status-text');
             if (contactDot && contactText) {
@@ -716,14 +718,10 @@
             }
         }
 
-        // Atualiza status ao carregar e reavalia a cada minuto
         document.addEventListener('DOMContentLoaded', () => {
             updateOpenStatus();
-            lucide.createIcons(); // reconstrói ícones após troca dinâmica
-            setInterval(() => {
-                updateOpenStatus();
-                lucide.createIcons();
-            }, 60000);
+            lucide.createIcons();
+            setInterval(() => { updateOpenStatus(); lucide.createIcons(); }, 60000);
         });
 
         /* ---------- Dados do cardápio ---------- */
@@ -731,6 +729,7 @@
             tradicional: {
                 price: "R$ 49,99",
                 brotos: "R$ 36,99",
+                label: "Tradicional",
                 items: [
                     { name: "Calabresa I", desc: "Calabresa com cebola" },
                     { name: "Mussarela", desc: "Deliciosa mussarela e orégano" },
@@ -745,6 +744,7 @@
             especial: {
                 price: "R$ 54,99",
                 brotos: "R$ 41,99",
+                label: "Especial",
                 items: [
                     { name: "Flor do Limão", desc: "Frango desfiado, milho, creme de leite coberto com mussarela" },
                     { name: "Quatro Queijos", desc: "Mussarela, provolone, requeijão cremoso e parmesão ralado" },
@@ -757,6 +757,7 @@
             premium: {
                 price: "R$ 64,99",
                 brotos: "R$ 49,99",
+                label: "Premium",
                 items: [
                     { name: "Mancioppi", desc: "Mussarela, pepperoni, tomate, pimentões selecionados e cebola roxa" },
                     { name: "Cinco Queijos", desc: "Mussarela, requeijão cremoso, provolone, gorgonzola e parmesão" },
@@ -768,6 +769,7 @@
             doce: {
                 price: "A partir de R$ 49,99",
                 brotos: "Consulte",
+                label: "Doce",
                 items: [
                     { name: "Brigadeiro", desc: "Chocolate ao leite, granulado e leite condensado" },
                     { name: "Chocolate com Morango", desc: "Chocolate ao leite, leite condensado e morango" },
@@ -778,13 +780,22 @@
             }
         };
 
-        /* ---------- Renderização do cardápio ---------- */
+        /* ---------- Render do cardápio ---------- */
         function renderMenu(category) {
             const grid = document.getElementById('pizza-grid');
             const data = menuData[category];
             grid.innerHTML = '';
 
             data.items.forEach((item, index) => {
+                const waMessage =
+                    `Olá! Gostaria de pedir uma pizza:\n` +
+                    `• Sabor: ${item.name}\n` +
+                    `• Categoria: ${data.label}\n` +
+                    `• Tamanho: Grande (R$ ${data.price.replace('R$ ', '')})\n` +
+                    `Pode confirmar disponibilidade?`;
+
+                const waLink = `https://wa.me/5511937295992?text=${encodeURIComponent(waMessage)}`;
+
                 const card = `
                     <article class="pizza-card group flex flex-col justify-between rounded-2xl border border-black/5 dark:border-white/5 bg-white dark:bg-brand-nightSoft p-5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                              style="animation-delay:${index * 55}ms">
@@ -800,8 +811,7 @@
 
                         <div class="mt-5 flex items-center justify-between border-t border-dashed border-gray-200 dark:border-white/10 pt-3 text-xs text-gray-500 dark:text-gray-400">
                             <span>Broto: <strong class="text-gray-700 dark:text-gray-300">${data.brotos}</strong></span>
-                            <a href="https://wa.me/5511937295992?text=Olá!%20Gostaria%20de%20pedir%20uma%20pizza%20de%20${encodeURIComponent(item.name)}"
-                               target="_blank" rel="noopener"
+                            <a href="${waLink}" target="_blank" rel="noopener"
                                class="inline-flex items-center gap-1 font-bold text-brand-green dark:text-brand-yellow hover:gap-2 transition-all">
                                 <span>Pedir</span>
                                 <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
@@ -815,21 +825,17 @@
             lucide.createIcons();
         }
 
-        /* ---------- Troca de categoria ---------- */
         function filterCategory(category) {
             document.querySelectorAll('.tab-btn').forEach((btn) => {
                 btn.classList.remove('active');
                 btn.setAttribute('aria-selected', 'false');
             });
-
             const activeBtn = document.getElementById(`btn-${category}`);
             activeBtn.classList.add('active');
             activeBtn.setAttribute('aria-selected', 'true');
-
             renderMenu(category);
         }
 
-        /* ---------- Render inicial ---------- */
         renderMenu('tradicional');
     </script>
 </body>
